@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./shared/material/material.module";
+import { EventComponent } from './component/event/event.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

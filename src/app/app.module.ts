@@ -9,6 +9,7 @@ import {MaterialModule} from "./shared/material/material.module";
 import { EventComponent } from './component/event/event.component';
 import {HttpClientModule, provideHttpClient, withFetch} from "@angular/common/http";
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule,
   ],
   providers: [
     provideClientHydration(),

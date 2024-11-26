@@ -43,7 +43,6 @@ export class EventComponent implements OnInit {
       next: (res: any) => {
         this.length = res.data.total;
         this.events = res.data.events;
-        console.log(this.events)
         this.dataSource = new MatTableDataSource(this.events)
       },
       error: (error) => {

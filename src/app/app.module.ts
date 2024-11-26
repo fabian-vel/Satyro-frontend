@@ -7,17 +7,21 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./shared/material/material.module";
 import { EventComponent } from './component/event/event.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ToolbarComponent } from './component/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventComponent
+    EventComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),

@@ -10,6 +10,7 @@ import { EventComponent } from './component/event/event.component';
 import {HttpClientModule, provideHttpClient, withFetch} from "@angular/common/http";
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {FlexLayoutServerModule} from "@angular/flex-layout/server";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MaterialModule,
     HttpClientModule,
     FlexLayoutModule,
+    FlexLayoutServerModule
   ],
   providers: [
     provideClientHydration(),

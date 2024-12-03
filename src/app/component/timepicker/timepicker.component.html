@@ -1,0 +1,39 @@
+<mat-form-field>
+  <mat-label>Hora</mat-label>
+  <div fxLayout="row" fxLayoutAlign="start center" [matMenuTriggerFor]="menu">
+    <input matInput class="input-timepicker" placeholder="hh:mm - AM/PM" [formControl]="timeControl" readonly>
+    <button *ngIf="timeControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="inputReset()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</mat-form-field>
+
+<mat-menu class="timepicker" #menu="matMenu">
+  <div class="form-timepicker" [formGroup]="form" (click)="$event.stopPropagation()">
+    <div class="input-content" fxLayout="row" fxLayoutAlign="center center">
+
+      <div class="hour-content" fxLayout="column" fxFlexAlign="space-between center">
+        <button class="icon-button" (click)="setHour('sumar')"><mat-icon color="primary">keyboard_arrow_up</mat-icon></button>
+        <input matInput type="number" class="mat-input" formControlName="hour" readonly>
+        <button class="icon-button" (click)="setHour('restar')"><mat-icon color="primary">keyboard_arrow_down</mat-icon></button>
+      </div>
+      <samp>:</samp>
+      <div class="minute-content" fxLayout="column" fxFlexAlign="space-between center">
+        <button class="icon-button" (click)="setMinute('sumar')"><mat-icon color="primary">keyboard_arrow_up</mat-icon></button>
+        <input matInput type="number" class="mat-input" formControlName="minute" readonly>
+        <button class="icon-button" (click)="setMinute('restar')"><mat-icon color="primary">keyboard_arrow_down</mat-icon></button>
+      </div>
+      <samp>-</samp>
+      <div class="period-content" fxLayout="column" fxFlexAlign="space-between center">
+        <button class="icon-button" (click)="setPeriod()"><mat-icon color="primary">keyboard_arrow_up</mat-icon></button>
+        <input matInput class="mat-input" formControlName="period" readonly>
+        <button class="icon-button" (click)="setPeriod()"><mat-icon color="primary">keyboard_arrow_down</mat-icon></button>
+      </div>
+    </div>
+    <div class="button-content" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <button mat-flat-button (click)="setTime()" color="primary">Aceptar</button>
+      <button mat-flat-button (click)="cerrarMenu()" color="accent">Cancelar</button>
+    </div>
+  </div>
+</mat-menu>
+

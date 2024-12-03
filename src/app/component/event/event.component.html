@@ -3,7 +3,7 @@
     <h1>Administración de eventos</h1>
   </div>
   <div class="form-content" fxLayout="row" fxFlexAlign="center center" style="width: 90%;">
-    <form>
+    <form [formGroup]="form">
       <mat-form-field>
         <mat-label>Nombre evento</mat-label>
         <input matInput type="text">
@@ -12,7 +12,12 @@
         <mat-label>Address 2</mat-label>
         <textarea matInput></textarea>
       </mat-form-field>
-      
+
+
+        <app-timepicker formControlName="time"></app-timepicker>
+        <p>Hora seleccionada: {{ form.get('time')?.value }}</p>
+
+
     </form>
   </div>
   <div class="mat-elevation-z8" fxLayout="column" fxFlexAlign="center center" style=" width: 90%;">

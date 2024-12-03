@@ -1,0 +1,63 @@
+.input-timepicker {
+  cursor: pointer;
+}
+.form-timepicker {
+  padding: 10px;
+  .input-content {
+    width: 100%;
+    .hour-content,
+    .minute-content,
+    .period-content {
+      width: 50px;
+      .icon-button {
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        cursor: pointer;
+        mat-icon {
+          margin: 0;
+          font-weight: 900;
+        }
+      }
+      .icon-button:hover {
+        background-color: rgba(211, 211, 211, 0.3);
+      }
+      .mat-input {
+        margin: 5px 0;
+        height: 30px;
+        font-size: 17px;
+        text-align: center;
+      }
+      input:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    samp {
+      margin: 0 5px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+  .button-content {
+    margin-top: 10px;
+    .mat-button {
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Ocultar flechas en Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

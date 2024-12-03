@@ -11,12 +11,15 @@ import {HttpClientModule, provideHttpClient, withFetch} from "@angular/common/ht
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {FlexLayoutServerModule} from "@angular/flex-layout/server";
+import { TimepickerComponent } from './component/timepicker/timepicker.component';
+import {PrimeNGModule} from "./shared/prime-ng/prime-ng.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     EventComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    TimepickerComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import {FlexLayoutServerModule} from "@angular/flex-layout/server";
     MaterialModule,
     HttpClientModule,
     FlexLayoutModule,
-    FlexLayoutServerModule
+    FlexLayoutServerModule,
+    PrimeNGModule
   ],
   providers: [
     provideClientHydration(),

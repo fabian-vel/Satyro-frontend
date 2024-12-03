@@ -3,6 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {HttpService} from "../../service/httpService/http.service";
 import {AlertService} from "../../service/sweetalert2/alert.service";
 import {PageEvent} from "@angular/material/paginator";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-event',
@@ -23,7 +24,7 @@ export class EventComponent implements OnInit {
   disabled = false;
 
   constructor(private httpService: HttpService,
-              private alertService: AlertService,) {
+              private alertService: AlertService) {
     this.dataSource = new MatTableDataSource();
   }
 
@@ -37,6 +38,10 @@ export class EventComponent implements OnInit {
     this.getAllEvent();
   }
 
+  form = new FormGroup ({
+    time: new FormControl ('') // Valor inicial que se pasará al hijo
+  });
+
   getAllEvent() {
     const body = {page: this.pageIndex, size: this.pageSize};
     this.httpService.post<any>('event/getAll', body).subscribe({
@@ -49,5 +54,11 @@ export class EventComponent implements OnInit {
         this.alertService.error('Error al listar eventos: ' + error.message);
       }
     });
+  }
+
+  setTime(): void {
+    // Cambiar el valor del FormControl desde el componente padre
+    this.form.get('time')?.setValue('08:15 PM');
+
   }
 }

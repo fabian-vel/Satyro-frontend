@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-toolbar',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
   isDarkTheme: boolean = false;
+
+
+  constructor(private router: Router) {
+  }
 
   toggleTheme(): void {
     this.isDarkTheme = !this.isDarkTheme;
@@ -19,5 +24,9 @@ export class ToolbarComponent {
       body.classList.add('light-theme');
       body.classList.remove('dark-theme');
     }
+  }
+
+  routingEvent(route: string) {
+    this.router.navigate([`/${route}`]);
   }
 }

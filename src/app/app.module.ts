@@ -14,13 +14,17 @@ import {FlexLayoutServerModule} from "@angular/flex-layout/server";
 import { TimepickerComponent } from './component/timepicker/timepicker.component';
 import {PrimeNGModule} from "./shared/prime-ng/prime-ng.module";
 import {NgOptimizedImage} from "@angular/common";
+import { HomeComponent } from './component/home/home.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventComponent,
     ToolbarComponent,
-    TimepickerComponent
+    TimepickerComponent,
+    HomeComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,

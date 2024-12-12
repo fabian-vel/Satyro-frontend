@@ -1,9 +1,7 @@
 <p>
   <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>admin_panel_settings</mat-icon>
-    </button>
-    <span>SATYRO</span>
+    <img src="assets/img/Logo-satyro-3.png" alt="" style="width: 50px" (click)="routingEvent('')">
+    <button mat-button style="margin-left: 20px" (click)="routingEvent('event')">Eventos</button>
     <span class="example-spacer"></span>
     <button mat-icon-button matTooltip="Cambiar tema" (click)="toggleTheme()">
       <mat-icon>{{ isDarkTheme ? 'dark_mode' : 'light_mode' }}</mat-icon>

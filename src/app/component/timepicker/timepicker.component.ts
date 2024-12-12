@@ -1,6 +1,7 @@
-import {Component, EventEmitter, forwardRef, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, forwardRef, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {MatMenuTrigger} from "@angular/material/menu";
+import {MatFormFieldAppearance} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-timepicker',
@@ -21,6 +22,9 @@ export class TimepickerComponent implements OnInit {
   minute: number = 0;
   period: string = '';
 
+  @Input() appearance: MatFormFieldAppearance = 'fill'; // Default appearance
+  @Input() label: string = '';
+  @Input() required: boolean = false;
   @Output() timeSelected = new EventEmitter<string>();
   @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
 
@@ -47,6 +51,17 @@ export class TimepickerComponent implements OnInit {
         minute: minute || '00',
         period: period || 'AM',
       });
+
+      const timeString = `${hour || '00'}:${minute || '00'} ${period || 'AM'}`;
+      this.timeControl.setValue(timeString);
+    }else {
+      // Limpiar el formulario interno si el valor es null o vacío
+      this.form.setValue({
+        hour: '00',
+        minute: '00',
+        period: 'AM',
+      });
+      this.timeControl.setValue('');
     }
   }
 

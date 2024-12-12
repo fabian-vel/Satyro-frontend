@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  .content-title {
+    width: 90%;
+    h1 {
+      margin: 0;
+    }
+  }
+  .expansion-panel {
+    width: 90%;
+    .form-content {
+      width: 100%;
+      .form-field {
+        margin: 0;
+        width: 300px;
+      }
+      .form-field-textarea {
+        width: 500px;
+        textarea {
+          resize: none;
+        }
+      }
+    }
+    .button-row-content {
+      width: 100%;
+      .btn {
+        margin-right: 10px;
+      }
+    }
+  }
+  .table-content {
+    width: 90%;
+    overflow-x: auto;
+    border-radius: 5px;
+    .table {
+      width: 100%;
+      th {
+        text-transform: uppercase;
+      }
+    }
+    .demo-paginator {
+      width: 100%;
+    }
+  }
+}
+
+
+
+

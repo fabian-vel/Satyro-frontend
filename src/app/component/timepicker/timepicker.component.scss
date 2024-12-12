@@ -1,5 +1,8 @@
-.input-timepicker {
-  cursor: pointer;
+mat-form-field {
+  width: 100%;
+  .input-timepicker {
+    cursor: pointer;
+  }
 }
 .form-timepicker {
   padding: 10px;

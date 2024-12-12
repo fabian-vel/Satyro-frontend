@@ -13,6 +13,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {FlexLayoutServerModule} from "@angular/flex-layout/server";
 import { TimepickerComponent } from './component/timepicker/timepicker.component';
 import {PrimeNGModule} from "./shared/prime-ng/prime-ng.module";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -21,16 +22,17 @@ import {PrimeNGModule} from "./shared/prime-ng/prime-ng.module";
     ToolbarComponent,
     TimepickerComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    HttpClientModule,
-    FlexLayoutModule,
-    FlexLayoutServerModule,
-    PrimeNGModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        HttpClientModule,
+        FlexLayoutModule,
+        FlexLayoutServerModule,
+        PrimeNGModule,
+        NgOptimizedImage
+    ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),

@@ -1,12 +1,12 @@
-<mat-form-field>
-  <mat-label>Hora</mat-label>
-  <div fxLayout="row" fxLayoutAlign="start center" [matMenuTriggerFor]="menu">
-    <input matInput class="input-timepicker" placeholder="hh:mm - AM/PM" [formControl]="timeControl" readonly>
-    <button *ngIf="timeControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="inputReset()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
+<mat-form-field [appearance]="appearance">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput class="input-timepicker" placeholder="hh:mm - AM/PM" [formControl]="timeControl" readonly
+         [matMenuTriggerFor]="menu" [required]="required">
+  <button *ngIf="timeControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="inputReset()">
+    <mat-icon>close</mat-icon>
+  </button>
 </mat-form-field>
+
 
 <mat-menu class="timepicker" #menu="matMenu">
   <div class="form-timepicker" [formGroup]="form" (click)="$event.stopPropagation()">

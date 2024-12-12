@@ -10,7 +10,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  get<T>(endpoint : string, params?: any): Observable<T> {
+  get<T>(endpoint : string): Observable<T> {
     return this.http.get<T>(environment.apiUrl + endpoint);
   }
 

@@ -1,13 +1,13 @@
 <p>
   <mat-toolbar color="primary">
-    <img src="assets/img/Logo-satyro-3.png" alt="" style="width: 50px" (click)="routingEvent('')">
-    <button mat-button style="margin-left: 20px" (click)="routingEvent('event')">Eventos</button>
+    <img src="assets/img/Logo-satyro-3.png" alt="" style="width: 50px" (click)="routingEvent(APP_ROUTES.HOME)">
+    <button mat-button style="margin-left: 20px" (click)="routingEvent(APP_ROUTES.EVENT)">Eventos</button>
     <span class="example-spacer"></span>
     <button mat-icon-button matTooltip="Cambiar tema" (click)="toggleTheme()">
       <mat-icon>{{ isDarkTheme ? 'dark_mode' : 'light_mode' }}</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+    <button mat-icon-button class="example-icon" (click)="routingEvent(APP_ROUTES.LOGIN)">
+      <mat-icon>logout</mat-icon>
     </button>
   </mat-toolbar>
 </p>

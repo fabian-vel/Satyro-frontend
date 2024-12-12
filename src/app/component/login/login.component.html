@@ -1,0 +1,45 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center center">
+  <div class="login-content" fxLayout="column" fxLayoutAlign="center center">
+    <img src="assets/img/Logo-satyro.png" alt="" style="width: 80px">
+    <div class="title">
+      <h1 style="font-weight: bold">Sign in</h1>
+    </div>
+    <div class="form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input matInput type="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </div>
+
+    <div class="example-button-row" fxLayout="row" fxLayoutAlign="center center">
+      <button mat-flat-button color="primary">Iniciar sesión</button>
+      <button mat-flat-button color="accent">Registrarse</button>
+    </div>
+    <div class="recover-password">
+      <p>¿Olvidaste tu contraseña?</p>
+    </div>
+
+    <div class="redes-content" fxLayout="row" fxLayoutAlign="center center">
+      <p>o continuar con:</p>
+      <div class="example-flex-container" fxLayout="row">
+        <button mat-icon-button>
+          <mat-icon style="color: #1877F2;">facebook</mat-icon>
+        </button>
+        <button mat-icon-button>
+
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

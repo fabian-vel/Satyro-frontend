@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RouteService} from "./service/routeService/route.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'satyro-frontend';
+
+
+  constructor(public routeService: RouteService) {
+  }
 }

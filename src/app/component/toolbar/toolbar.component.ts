@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {NavigationService} from "../../service/navigationService/navigation.service";
+import {APP_ROUTES} from "../../shared/app-routes/paths";
 
 @Component({
   selector: 'app-toolbar',
@@ -9,8 +11,9 @@ import {Router} from "@angular/router";
 export class ToolbarComponent {
   isDarkTheme: boolean = false;
 
+  protected readonly APP_ROUTES = APP_ROUTES;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private navigateServise: NavigationService) {
   }
 
   toggleTheme(): void {
@@ -27,6 +30,6 @@ export class ToolbarComponent {
   }
 
   routingEvent(route: string) {
-    this.router.navigate([`/${route}`]);
+    this.navigateServise.navigateTo(route)
   }
 }

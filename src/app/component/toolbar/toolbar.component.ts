@@ -13,7 +13,7 @@ export class ToolbarComponent {
 
   protected readonly APP_ROUTES = APP_ROUTES;
 
-  constructor(private router: Router, private navigateServise: NavigationService) {
+  constructor(private router: Router, private navigationService: NavigationService) {
   }
 
   toggleTheme(): void {
@@ -30,6 +30,6 @@ export class ToolbarComponent {
   }
 
   routingEvent(route: string) {
-    this.navigateServise.navigateTo(route)
+    this.navigationService.navigateTo(route)
   }
 }

@@ -1,5 +1,5 @@
 export const APP_ROUTES = {
-  HOME: '',
+  HOME: 'home',
   EVENT: 'event',
   LOGIN: 'login',
 }

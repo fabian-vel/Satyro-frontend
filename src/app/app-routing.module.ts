@@ -8,7 +8,8 @@ import {APP_ROUTES} from "./shared/app-routes/paths";
 const routes: Routes = [
   {path: APP_ROUTES.HOME, component: HomeComponent},
   {path: APP_ROUTES.EVENT, component: EventComponent},
-  {path: APP_ROUTES.LOGIN, component: LoginComponent}
+  {path: APP_ROUTES.LOGIN, component: LoginComponent},
+  {path: '', component: LoginComponent}
 ];
 
 @NgModule({

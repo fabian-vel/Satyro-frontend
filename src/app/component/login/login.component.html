@@ -1,17 +1,22 @@
-<div class="content" fxLayout="row" fxLayoutAlign="center center">
+<div class="content" fxLayout="column" fxLayoutAlign="center center">
+
+  <div class="title-content" fxLayoutAlign="center center">
+    <h1 class="title">Iniciar sesión</h1>
+  </div>
   <div class="login-content" fxLayout="column" fxLayoutAlign="center center">
-    <img src="assets/img/Logo-satyro.png" alt="" style="width: 80px">
-    <div class="title">
-      <h1 style="font-weight: bold">Sign in</h1>
+
+    <div class="img-content" fxLayoutAlign="center center">
+      <img class="img-logo" src="assets/img/Logo-satyro.png" alt="">
     </div>
-    <div class="form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+
+    <div class="form" fxLayout="column" fxLayoutAlign="center center">
 
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Correo</mat-label>
         <input matInput type="email">
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field class="form-field" appearance="outline">
         <mat-label>Contraseña</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -21,25 +26,29 @@
 
     </div>
 
-    <div class="example-button-row" fxLayout="row" fxLayoutAlign="center center">
-      <button mat-flat-button color="primary">Iniciar sesión</button>
-      <button mat-flat-button color="accent">Registrarse</button>
+    <div class="button-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <button class="flat-button" mat-flat-button color="primary" (click)="routingEvent(APP_ROUTES.HOME)">
+        Iniciar sesión</button>
+      <button class="flat-button" mat-flat-button color="accent">
+        Registrarse</button>
     </div>
-    <div class="recover-password">
+
+    <div class="recover-password"  fxLayoutAlign="center center">
       <p>¿Olvidaste tu contraseña?</p>
     </div>
 
-    <div class="redes-content" fxLayout="row" fxLayoutAlign="center center">
-      <p>o continuar con:</p>
-      <div class="example-flex-container" fxLayout="row">
-        <button mat-icon-button>
-          <mat-icon style="color: #1877F2;">facebook</mat-icon>
-        </button>
-        <button mat-icon-button>
+    <hr class="divider">
 
+    <div class="network-content" fxLayout="row" fxLayoutAlign="center center">
+      <p class="sub-title">Continuar con:</p>
+      <div class="flex-container" fxLayout="row">
+        <button mat-icon-button class="btn-network btn">
+          <i class="bi bi-facebook"></i>
+        </button>
+        <button mat-icon-button class="btn-network">
+          <i class="bi bi-google"></i>
         </button>
       </div>
     </div>
-
   </div>
 </div>
